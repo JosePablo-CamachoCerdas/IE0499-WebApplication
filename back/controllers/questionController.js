@@ -13,7 +13,7 @@ exports.create = (req, res) => {
                 error: "Parsing data failed"
             })
         }
-        const {question, answer1, iscorrect1, answer2, iscorrect2, answer3, iscorrect3, answer4, iscorrect4, answer5, iscorrect5} = fields;
+        const {question, ans1, corr1, ans2, corr2, ans3, corr3, ans4, corr4, ans5, corr5} = fields;
         let question_new = new Question(fields);
         question_new.save((err, result) => {
             if (err){
