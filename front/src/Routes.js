@@ -1,6 +1,9 @@
 import React from "react";
 import Home from "./core/Home";
-import Search from "./core/Search";
+import Signup from "./core/Signup";
+import Login from "./core/Login";
+import Contact from "./core/Contact";
+
 import {BrowserRouter, Switch, Route } from "react-router-dom"
 
 const Routes = () => {
@@ -8,7 +11,9 @@ const Routes = () => {
         <BrowserRouter>
             <Switch>
                 <Route path="/" exact component={Home} />
-                <Route path="/questionById" exact component={Search} />
+                <Route path="/contact" exact component={Contact} />
+                <Route path="/signup" exact component={Signup} />
+                <Route path="/login" exact component={Login} />
             </Switch>
         </BrowserRouter>
     )

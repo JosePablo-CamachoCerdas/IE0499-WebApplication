@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import NavBar from "../layout/NavBar";
 import { getQuestions } from "./apiCore";
 import Listquestion from "./Listquestion";
+import Footer from "./Footer";
 
 const Home = (req, res) => {
 
@@ -34,6 +35,7 @@ const Home = (req, res) => {
                     </div>
                 ))}
         </div>
+        <Footer />
     </div>);
 }
 

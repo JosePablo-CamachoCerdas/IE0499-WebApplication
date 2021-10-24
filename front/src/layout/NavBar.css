@@ -1,3 +1,10 @@
 .navi{
     margin-bottom: 2rem;
 }
+
+.navitem {
+    width: 8.5rem;
+}
+.navitemf {
+    width: 10rem;
+}
