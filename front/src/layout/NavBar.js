@@ -23,7 +23,7 @@ const NavBar = () => {
                             {!isAuthenticated() && (
                                 <>
                                     <li className="nav-item active">
-                                        <a className="nav-link" aria-current="page" href="#">PAA</a>
+                                        <a className="nav-link" aria-current="page" href="/">PAA</a>
                                     </li>
                                     <li className="nav-item navitemf">
                                         <a className="nav-link" href="#">Fechas importantes</a>
@@ -33,10 +33,10 @@ const NavBar = () => {
                             {isAuthenticated() && (
                                 <>
                                     <li className="nav-item active">
-                                        <a className="nav-link" aria-current="page" href="#">PAA</a>
+                                        <a className="nav-link" aria-current="page" href="/">PAA</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="/">Administración PAA</a>
+                                        <a className="nav-link" href="/homeuser">Administración PAA</a>
                                     </li>
                                 </>
                             )}

@@ -64,16 +64,16 @@ const Login = () => {
             }
         }
             if(isAuthenticated()) {
-                return <Redirect to="/" />
+                return <Redirect to="/homeuser" />
             }
     }
 
     const showError = () => (
-        <div className="alert alert-danger" style={{display: error ? '': 'none'}}>{error}</div>
+        <div className="alert alert-danger mt-4" style={{display: error ? '': 'none'}}>Contraseña o email incorrectos, intenta de nuevo.</div>
     )
     const showLoading = () => (
         loading && (
-            <div className="alert alert-info">
+            <div className="alert alert-info mt-4">
                 <h2>Loading..</h2>
             </div>
         )
@@ -84,9 +84,9 @@ const Login = () => {
             <NavBar />
             <h4 className="text-center">Iniciar sesión</h4>
             <div className="center mt-3 mb-3">
+            {logInForm()}
             {showError()}
             {showLoading()}
-            {logInForm()}
             {redirectUser()}
             </div>
             <Footer />
