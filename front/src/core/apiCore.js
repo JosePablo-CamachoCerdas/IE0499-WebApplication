@@ -82,7 +82,22 @@ export const isAuthenticated = () => {
         return JSON.parse(localStorage.getItem('jwt'));
         //return localStorage.getItem('jwt');
     } 
-    
     return false;
-    
 }
+
+export const createQuestion = (userId, token, question) => {
+    return fetch("http://localhost:5000/api/question/createquestion", {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        Authorization: `Bearer ${token}`
+      },
+      body: question
+    })
+      .then(response => {
+        return response.json()
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  }

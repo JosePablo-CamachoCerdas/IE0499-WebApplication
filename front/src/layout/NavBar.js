@@ -38,6 +38,9 @@ const NavBar = () => {
                                     <li className="nav-item">
                                         <a className="nav-link" href="/homeuser">Administración PAA</a>
                                     </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="/addquestion">Agregar Pregunta</a>
+                                    </li>
                                 </>
                             )}
                             </ul>
