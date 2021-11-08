@@ -1,0 +1,14 @@
+.center {
+    margin: auto;
+    width: 50%;
+    padding-top: 0px;
+  }
+
+.cards{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.link{
+    color: gray;
+}
