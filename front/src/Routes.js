@@ -4,6 +4,7 @@ import Signup from "./core/Signup";
 import Login from "./core/Login";
 import Contact from "./core/Contact";
 import AddQuestion from "./core/AddQuestion";
+import DeleteQuestion from "./core/DeleteQuestion";
 import PAA from "./core/PAA";
 import {BrowserRouter, Switch, Route } from "react-router-dom"
 
@@ -17,6 +18,7 @@ const Routes = () => {
                 <Route path="/signup" exact component={Signup} />
                 <Route path="/login" exact component={Login} />
                 <Route path="/addquestion" exact component={AddQuestion} />
+                <Route path="/deletequestion/:questionId" exact component={DeleteQuestion} />
             </Switch>
         </BrowserRouter>
     )

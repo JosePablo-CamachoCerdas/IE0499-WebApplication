@@ -2,6 +2,34 @@ import React from "react";
 import "./NavBar.css"
 import { isAuthenticated, logout } from "../core/apiCore";
 
+const {user} = isAuthenticated();
+
+function userAdmin(user) {
+    if (user === undefined) {
+        return false
+    } else {
+        if (user.role === 1) {
+            return true
+        } else {
+            return false
+        }
+    }
+}
+
+function userNotAdmin(user) {
+    if (user === undefined) {
+        return false
+    } else {
+        if (user.role === 0) {
+            return true
+        } else {
+            return false
+        }
+    }
+}
+
+
+
 const NavBar = () => {
     return(
         <div>
@@ -30,7 +58,7 @@ const NavBar = () => {
                                     </li>
                                 </>
                             )}
-                            {isAuthenticated() && (
+                            {isAuthenticated() && userAdmin(user)  && (
                                 <>
                                     <li className="nav-item active">
                                         <a className="nav-link" aria-current="page" href="/">PAA</a>
@@ -40,6 +68,19 @@ const NavBar = () => {
                                     </li>
                                     <li className="nav-item">
                                         <a className="nav-link" href="/addquestion">Agregar Pregunta</a>
+                                    </li>
+                                </>
+                            )}
+                            {isAuthenticated() && userNotAdmin(user)  && (
+                                <>
+                                    <li className="nav-item active">
+                                        <a className="nav-link" aria-current="page" href="/">PAA</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="/#">Práctica en línea</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="/#">Tu progreso</a>
                                     </li>
                                 </>
                             )}

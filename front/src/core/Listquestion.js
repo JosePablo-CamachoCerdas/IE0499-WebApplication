@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button'
@@ -30,7 +29,14 @@ const Listquestion = ({question}) => {
                     <ListGroup.Item>{question.answer_5}  {isCorrect(question.iscorrect_5)}</ListGroup.Item>
                   </ListGroup>
                     <Card.Body>
-                      <Card.Link className="link" href="/editar">Editar pregunta</Card.Link>
+                    <a href={`/deletequestion/${question._id}`}>  
+                        <button 
+                            type="button" class="btn btn-light"
+                            onClick={(e) => { if (window.confirm('Seguro que deseas borrar la pregunta de la base de datos de PAA?')) this.deleteItem(e) } }>
+                            Borrar pregunta
+                        </button>
+                    </a>
+                      {/* <Card.Link className="link" onclick="return confirm('Please click on OK to continue.');" href={`/deletequestion/${question._id}`}>Borrar pregunta</Card.Link> */}
                     </Card.Body>
                 </Card>
             </div>

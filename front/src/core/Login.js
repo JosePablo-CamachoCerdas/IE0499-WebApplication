@@ -58,8 +58,8 @@ const Login = () => {
     const redirectUser = () => {
         if(redirectToReferrer) {
             if(user && user.role === 1) {
-                return <Redirect to="/admin/dashboard" />
-            } else {
+                return <Redirect to="/homeuser" />
+            } else if (user && user.role === 0){
                 return <Redirect to="/" />
             }
         }
@@ -86,7 +86,6 @@ const Login = () => {
             <div className="center mt-3 mb-3">
             {logInForm()}
             {showError()}
-            {showLoading()}
             {redirectUser()}
             </div>
             <Footer />

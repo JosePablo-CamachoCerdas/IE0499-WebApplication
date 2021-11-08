@@ -101,3 +101,15 @@ export const createQuestion = (userId, token, question) => {
         console.log(err);
       })
   }
+
+  export const deleteQuestion = (questionId) => {
+    return fetch (`http://localhost:5000/api/question/${questionId}`, {
+    method: "DELETE"
+    })
+    .then(response => {
+        return response.json();
+    })
+    .catch(err => {
+        console.log(err);
+    })
+  }

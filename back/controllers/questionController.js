@@ -29,7 +29,6 @@ exports.create = (req, res) => {
 exports.list = (req, res) => {
     let order = req.query.order ? req.query.order : "asc"
     let sortBy = req.query.sortBy ? req.query.sortBy : "question"
-
     Question.find()
         .sort([[sortBy, order]])
         .exec((err, questions) => {

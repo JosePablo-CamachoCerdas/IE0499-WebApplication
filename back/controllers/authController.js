@@ -41,7 +41,7 @@ exports.login = (req, res) => {
         // If not errors, creating token of jwt type using user id
         const token = jwt.sign({_id:user._id}, process.env.JWT_SECRET)
         // Create cookie session, during + xxxx time
-        res.cookie('t', token, {expire: new Date() + 9999})
+        res.cookie('t', token, {expire: new Date() + 0})
         const {_id, name, email, role} = user
         return res.json({token, user: {_id, email, name, role}})
     });
@@ -51,3 +51,15 @@ exports.logout = (req, res) => {
     res.clearCookie('t')
     res.json({message: "Signout success"});
 };
+
+exports.userById = (req, res, next, id) => {
+    User.findById(id).exec((err,user) => {
+        if(err||!user) {
+            return res.status(400).json({
+                error: "Usuario no encontrado"
+            });
+        }
+        req.profile = user;
+        next()
+    });
+}
